@@ -71,7 +71,7 @@ const Form = () => {
                 </div>
 
                 <div className='col-11 col-md-5 form-group pb-4'>
-                    <input type='text' placeholder='NAME' id="name" value={name} className='form-control bg_grey text-light rounded form-control-lg shadow-none'  onChange={(e)=>setName(e.target.value)}/>
+                    <input type='text' placeholder='NAME' id="name" value={name} className='form-control bg_grey rounded form-control-lg shadow-none'  onChange={(e)=>setName(e.target.value)}/>
                     <span style={{color:'red'}}>{object.name}</span>
                 </div>
 
@@ -79,7 +79,7 @@ const Form = () => {
                     <input type='number' placeholder='PHONE NUMBER' id="phone" value={phone} className='form-control bg_grey rounded form-control-lg shadow-none' onChange={(e)=>setPhone(e.target.value)}/>
                     <span style={{color:'red'}}>{object.phone}</span>
                 </div>
-            </div>
+           
 
             <div className='row d-flex justify-content-center pb-4'>
                 <div className='col-11 col-md-5 form-group'>
@@ -109,6 +109,7 @@ const Form = () => {
             <button class="glow-on-hover" type="submit" onClick={btn}>Submit</button>
             </div>
         </div>
+      </div>
     </div>
   )
 }
