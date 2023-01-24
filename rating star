@@ -1,0 +1,100 @@
+import React, { useEffect, useState } from "react";
+export default function App() {
+  const [rating, setRating] = useState(null);
+
+  const handleClick = (newRating) => {
+    setRating(newRating);
+  };
+
+  useEffect(() => {
+    let one = document.querySelector(".one");
+    let two = document.querySelector(".two");
+    let three = document.querySelector(".three");
+    let four = document.querySelector(".four");
+    let five = document.querySelector(".five");
+
+    one.addEventListener("click", function () {
+      one.style.background = "red";
+      five.style.background = "white";
+      four.style.background = "white";
+      three.style.background = "white";
+      two.style.background = "white";
+    });
+    two.addEventListener("click", function () {
+      two.style.background = "red";
+      one.style.background = "red";
+      five.style.background = "white";
+      four.style.background = "white";
+      three.style.background = "white";
+    });
+    three.addEventListener("click", function () {
+      three.style.background = "red";
+      two.style.background = "red";
+      one.style.background = "red";
+      five.style.background = "white";
+      four.style.background = "white";
+    });
+    four.addEventListener("click", function () {
+      four.style.background = "red";
+      three.style.background = "red";
+      two.style.background = "red";
+      one.style.background = "red";
+      five.style.background = "white";
+    });
+    five.addEventListener("click", function () {
+      five.style.background = "red";
+      four.style.background = "red";
+      three.style.background = "red";
+      two.style.background = "red";
+      one.style.background = "red";
+    });
+  });
+
+  return (
+    <>
+    
+    <div>
+      <button
+        className="one"
+        style={{ background: "red" }}
+        onClick={() => handleClick(1)}
+      >
+        1 Star
+      </button>
+      <button
+        className="two"
+        style={{ background: "red" }}
+        onClick={() => handleClick(2)}
+      >
+        2 Stars
+      </button>
+      <button
+        className="three"
+        style={{ background: "red" }}
+        onClick={() => handleClick(3)}
+      >
+        3 Stars
+      </button>
+      <button
+        className="four"
+        style={{ background: "red" }}
+        onClick={() => handleClick(4)}
+      >
+        4 Stars
+      </button>
+      <button
+        className="five"
+        style={{ background: "red" }}
+        onClick={() => handleClick(5)}
+      >
+        5 Stars
+      </button>
+    
+    </div>
+    {rating
+        ? `You have given ${rating} stars`
+        : "Please select a rating"}
+    </>
+  );
+}
+
